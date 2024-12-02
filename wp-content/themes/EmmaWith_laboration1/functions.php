@@ -35,6 +35,13 @@ function disable_block_widgets()
 }
 
 //Slut på gratis
+//sätta upp funktioner, att kunna använda biler och menyer att lägga till
+function my_theme_setup()
+{
+  add_theme_support('post-thumbnails');
+  add_theme_support('menus');
+}
+add_action('after_setup_theme', 'my_theme_setup');
 
 //lägga till styling
 function css_inks()
@@ -46,8 +53,18 @@ function css_inks()
 
 add_action('wp_enqueue_scripts', 'css_inks');
 
-function add_custom_script()
+
+//funkar inte som tänkt får kolla på detta sen
+
+function add_jquery_script()
 {
-  wp_enqueue_script('jquery',   get_template_directory_uri() . '/js/jquery', array(), true);
+  wp_enqueue_script('jquery', get_template_directory_uri() . '/js/jquery.js', array(), null, false);
 }
-add_action('wp_enqueue_scripts', 'add_custom_script');
+add_action('wp_enqueue_scripts', 'add_jquery_script');
+
+
+function add_custom_js_script()
+{
+  wp_enqueue_script('js-script',   get_template_directory_uri() . '/js/script.js', array(), true);
+}
+add_action('wp_enqueue_scripts', 'add_custom_js_script');

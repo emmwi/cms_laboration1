@@ -53,8 +53,18 @@ function css_inks()
 
 add_action('wp_enqueue_scripts', 'css_inks');
 
-
-
+//lägger till två filter för excerpt hooken
+function custom_excerpt_length($length)
+{
+  return 66;
+}
+add_filter('excerpt_length', 'custom_excerpt_length');
+//över returnerar 66 karaktärer och under tar vi bort vad som kommer ist för ....
+function custom_excerpt_more()
+{
+  return '';
+}
+add_filter('excerpt_more', 'custom_excerpt_more');
 
 //funkar inte som tänkt får kolla på detta sen
 

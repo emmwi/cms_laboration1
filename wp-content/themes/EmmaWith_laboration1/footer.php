@@ -24,13 +24,26 @@
 
         <h4>Social media</h4>
         <div>
-          <ul class="social">
+          <?php
+
+          //behöver fixa till iconerna
+          wp_nav_menu(
+            [
+              'menu' => 7,
+              'container' => 'ul',
+              'menu_class' => 'social',
+              'link-before' => "<i class= 'fa fa-'></i>",
+              'link-after' => ''
+            ]
+          ) ?>
+        </div>
+        <!-- <ul class="social">
             <li><i class="fa fa-facebook"></i> <a href="#">Facebook</a></li>
             <li><i class="fa fa-twitter"></i> <a href="#">Twitter</a></li>
             <li><i class="fa fa-instagram"></i> <a href="#">Instagram</a></li>
             <li><i class="fa fa-linkedin"></i> <a href="#">LinkedIn</a></li>
-          </ul>
-        </div>
+          </ul> -->
+
       </div>
     </div>
     <div class="row bottom">

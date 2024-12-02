@@ -54,6 +54,8 @@ function css_inks()
 add_action('wp_enqueue_scripts', 'css_inks');
 
 
+
+
 //funkar inte som tänkt får kolla på detta sen
 
 function add_jquery_script()

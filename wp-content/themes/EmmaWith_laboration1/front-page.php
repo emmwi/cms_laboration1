@@ -12,7 +12,10 @@ while (have_posts()) {
             <div class="text">
               <p>
               <div>
-                <?php echo  the_content(); ?>
+                <?php echo  the_content();
+
+
+                ?>
               </div>
               </p>
             </div>

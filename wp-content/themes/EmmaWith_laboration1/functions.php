@@ -66,17 +66,31 @@ function custom_excerpt_more()
 }
 add_filter('excerpt_more', 'custom_excerpt_more');
 
+function add_menu_icons() {}
+
 //funkar inte som tänkt får kolla på detta sen
 
-function add_jquery_script()
+function jquery_script()
 {
-  wp_enqueue_script('jquery', get_template_directory_uri() . '/js/jquery.js', array(), null, false);
+  wp_enqueue_script(
+    'jquery',
+    includes_url('/js/jquery/jquery.js'),
+    array(),
+    null,
+    false
+  );
 }
-add_action('wp_enqueue_scripts', 'add_jquery_script');
+add_action('wp_enqueue_scripts', 'jquery_script');
 
 
-function add_custom_js_script()
+function custom_js_script()
 {
-  wp_enqueue_script('js-script',   get_template_directory_uri() . '/js/script.js', array(), true);
+  wp_enqueue_script(
+    'custom_js_script',
+    get_template_directory_uri() . '/js/script.js',
+    array('jquery'),
+    null,
+    true
+  );
 }
-add_action('wp_enqueue_scripts', 'add_custom_js_script');
+add_action('wp_enqueue_scripts', 'custom_js_script');

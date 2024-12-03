@@ -1,3 +1,5 @@
+<?php
+var_dump(home_url()); ?>
 <!DOCTYPE html>
 <html>
 
@@ -14,7 +16,7 @@
       <div class="container">
         <div class="row">
           <div class="col-xs-8 col-sm-6">
-            <a class="logo" href="index.html">Labb 1</a>
+            <a class="logo" href="<?php echo home_url(); ?>">Labb 1</a>
           </div>
           <div class="col-sm-6 hidden-xs">
             <form class="searchform">
@@ -54,7 +56,7 @@
                 'menu' => 6,
                 'container' => 'ul',
                 'menu_class' => 'menu',
-                'menu_id ' => 'menu-huvudmeny'
+                'menu_id' => 'menu-huvudmeny',
 
               ]
             ) ?>

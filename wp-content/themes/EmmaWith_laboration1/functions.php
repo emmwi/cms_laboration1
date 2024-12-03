@@ -44,6 +44,53 @@ function my_theme_setup()
 }
 add_action('after_setup_theme', 'my_theme_setup');
 
+
+function wp_nav_menu_no_div($args)
+{
+  //sätter tar bort container
+  $args['container'] = false;
+  return $args;
+}
+add_filter('wp_nav_menu_args', 'wp_nav_menu_no_div');
+
+function theme_widget_init()
+{
+  register_sidebar([
+    'name' => 'search-blog-side',
+    'id' => 'search',
+    'before_widget' => '',
+    'after_widget' => '',
+    'before_title' => '<h3 >',
+    'after_title' => '</h3>',
+  ]); //registrerar widget
+  register_sidebar([
+    'name' => 'pages-blog-side',
+    'id' => 'nav-pages',
+    'before_widget' => '',
+    'after_widget' => '',
+    'before_title' => '<h3 >',
+    'after_title' => '</h3>',
+  ]); //registrerar widget
+  register_sidebar([
+    'name' => 'arkiv-blog-side',
+    'id' => 'nav-arkiv',
+    'before_widget' => '',
+    'after_widget' => '',
+    'before_title' => '<h3 >',
+    'after_title' => '</h3>',
+  ]); //registrerar widget
+  register_sidebar([
+    'name' => 'category-blog-side',
+    'id' => 'nav-category',
+    'before_widget' => '',
+    'after_widget' => '',
+    'before_title' => '<h3 >',
+    'after_title' => '</h3>',
+  ]); //registrerar widget
+
+}
+add_action('widgets_init', 'theme_widget_init');
+
 //lägga till styling
 function css_inks()
 {
@@ -68,32 +115,25 @@ function custom_excerpt_more()
 add_filter('excerpt_more', 'custom_excerpt_more');
 
 
-
-function add_menu_icons() {}
-
 //funkar inte som tänkt får kolla på detta sen
-
-function jquery_script()
+function my_theme_script()
 {
-  wp_enqueue_script(
-    'jquery',
-    includes_url('/js/jquery/jquery.js'),
-    array(),
-    null,
-    false
-  );
+  wp_enqueue_script('jquery');
+  wp_enqueue_script('my-js-theme-script', get_template_directory_uri() . '/js/script.js', array('jquery'), '', true);
 }
-add_action('wp_enqueue_scripts', 'jquery_script');
+add_action('wp_enqueue_scripts', 'my_theme_script');
 
-
-function custom_js_script()
-{
-  wp_enqueue_script(
-    'custom_js_script',
-    get_template_directory_uri() . '/js/script.js',
-    array('jquery'),
-    null,
-    true
-  );
-}
-add_action('wp_enqueue_scripts', 'custom_js_script');
+// function js_theme_script()
+// {
+//   wp_enqueue_script(
+//     'jquery',
+//     includes_url('/js/jquery/jquery.js'),
+//     array(),
+//     null,
+//     false
+//   );
+//   // wp_enqueue_script('jquery');
+//   //funkar inte att hämta från css mappen så använder wordpress egna
+//   wp_enqueue_script('my-js-theme-script', get_template_directory_uri() . '/js/script.js', array('jquery'), '', true);
+// }
+// add_action('wp_enqueue_scripts', 'js_theme_script');

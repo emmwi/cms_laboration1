@@ -3,6 +3,7 @@ page2?
 get_header();
 while (have_posts()) {
   the_post(); ?>
+
   <section>
     <div class="container">
       <div class="row">
@@ -23,6 +24,7 @@ while (have_posts()) {
       </div>
     </div>
   </section>
+
 <?php
 }
 get_footer();

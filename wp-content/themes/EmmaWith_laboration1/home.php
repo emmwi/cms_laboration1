@@ -22,7 +22,7 @@ get_header();
                 <i class="fa fa-user"></i> <a href="forfattare.html" title="Inlägg av Anders Andersson" rel="author"><?php the_author() ?></a></a>
               </li>
               <li>
-                <i class="fa fa-tag"></i> <a href="kategori.html" rel="category tag"><?php the_category() ?></a>
+                <i class="fa fa-tag"></i> <?php the_category(' , ') ?></a>
               </li>
             </ul>
 

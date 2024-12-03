@@ -12,7 +12,7 @@ while (have_posts()) {
           the_content(); ?>
         </div>
         <div class="col-xs-12 col-sm-4 col-md-6">
-          <img src="<?php the_post_thumbnail(); ?>" />
+          <?php the_post_thumbnail(); ?>
         </div>
       </div>
     </div>

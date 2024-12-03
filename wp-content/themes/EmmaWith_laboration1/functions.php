@@ -116,12 +116,12 @@ add_filter('excerpt_more', 'custom_excerpt_more');
 
 
 //funkar inte som tänkt får kolla på detta sen
-function my_theme_script()
-{
-  wp_enqueue_script('jquery');
-  wp_enqueue_script('my-js-theme-script', get_template_directory_uri() . '/js/script.js', array('jquery'), '', true);
-}
-add_action('wp_enqueue_scripts', 'my_theme_script');
+// function my_theme_script()
+// {
+//   wp_enqueue_script('jquery');
+//   wp_enqueue_script('my-js-theme-script', get_template_directory_uri() . '/js/script.js', array('jquery'), '', true);
+// }
+// add_action('wp_enqueue_scripts', 'my_theme_script');
 
 // function js_theme_script()
 // {

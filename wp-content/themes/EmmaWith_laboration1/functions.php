@@ -49,6 +49,7 @@ function wp_nav_menu_no_div($args)
 {
   //sätter tar bort container
   $args['container'] = false;
+
   return $args;
 }
 add_filter('wp_nav_menu_args', 'wp_nav_menu_no_div');
@@ -113,6 +114,16 @@ function theme_widget_init()
     'before_title' => '<h4>',
     'after_title' => '</h4>',
   ]); //registrerar widget
+
+  register_sidebar([
+    'name' => 'aside-undersida',
+    'id' => 'aside-page',
+    'before_widget' => '',
+    'after_widget' => '',
+    'before_title' => '<h4>',
+    'after_title' => '</h4>',
+  ]); //registrerar widget
+
 }
 add_action('widgets_init', 'theme_widget_init');
 

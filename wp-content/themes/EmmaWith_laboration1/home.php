@@ -14,7 +14,7 @@ while (have_posts()) {
           <article>
             <?php the_post_thumbnail(); ?>
             <h2 class=" title">
-              <a href="<?php echo the_permalink() ?>"><?php echo the_title(); ?></a>
+              <a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
             </h2>
             <ul class="meta">
               <li>
@@ -38,3 +38,4 @@ while (have_posts()) {
   </section>
 <?php
 }
+get_footer();

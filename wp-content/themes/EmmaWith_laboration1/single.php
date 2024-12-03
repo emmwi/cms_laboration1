@@ -3,10 +3,35 @@ snigel
 get_header();
 
 while (have_posts()) {
-  the_post();
-  get_the_post_thumbnail();
-  the_title();
-  the_content();
+  the_post(); ?>
+
+  <section>
+    <div class="container">
+      <div class="row">
+        <div id="primary" class="col-xs-12 col-md-9">
+          <article>
+            <?php the_post_thumbnail(); ?>
+            <h1><?php the_title(); ?></h1>
+            <ul class="meta">
+              <li>
+                <i class="fa fa-calendar"></i> <?php the_date() ?>
+              </li>
+              <li>
+                <i class="fa fa-user"></i> <a href="forfattare.html" title="Inlägg av Anders Andersson" rel="author"><?php the_author() ?></a>
+              </li>
+              <li>
+                <i class="fa fa-tag"></i> <?php the_category() ?>
+              </li>
+            </ul>
+            <p>
+              <?php the_content();
+              ?></p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+<?php
 }
 ?>
 
@@ -15,13 +40,15 @@ while (have_posts()) {
   <div id="sidebar">
     <ul>
       <li id="search-2" class="widget widget_search">
-        <form class="searchform">
+
+        <!-- <form class="searchform">
           <div>
             <label class="screen-reader-text">Sök efter:</label>
             <input type="text" />
             <input type="submit" value="Sök" />
           </div>
-        </form>
+        </form> -->
+        <?php get_search_form() ?>
       </li>
     </ul>
     <ul role="navigation">
@@ -70,3 +97,5 @@ while (have_posts()) {
     </ul>
   </div>
 </aside>
+<?php
+get_footer();

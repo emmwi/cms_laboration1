@@ -66,6 +66,8 @@ function custom_excerpt_more()
 }
 add_filter('excerpt_more', 'custom_excerpt_more');
 
+
+
 function add_menu_icons() {}
 
 //funkar inte som tänkt får kolla på detta sen
@@ -94,3 +96,6 @@ function custom_js_script()
   );
 }
 add_action('wp_enqueue_scripts', 'custom_js_script');
+
+
+register_nav_menu('mainmenu', 'Main menu in header.');

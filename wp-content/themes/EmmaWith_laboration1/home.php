@@ -1,4 +1,3 @@
-Home
 <?php
 get_header();
 ?>

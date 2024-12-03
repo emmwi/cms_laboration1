@@ -1,5 +1,3 @@
-<?php
-var_dump(home_url()); ?>
 <!DOCTYPE html>
 <html>
 
@@ -11,7 +9,6 @@ var_dump(home_url()); ?>
 <body>
   <?php wp_body_open() ?>
   <div id="wrap">
-
     <header id="header">
       <div class="container">
         <div class="row">
@@ -54,10 +51,9 @@ var_dump(home_url()); ?>
             wp_nav_menu(
               [
                 'menu' => 6,
-                'container' => 'ul',
+                'container' => ' ',
                 'menu_class' => 'menu',
                 'menu_id' => 'menu-huvudmeny',
-
               ]
             ) ?>
           </div>

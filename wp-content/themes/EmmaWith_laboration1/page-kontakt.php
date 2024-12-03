@@ -1,4 +1,3 @@
-page kontakt?? här hamnar kontakt
 <?php
 get_header();
 while (have_posts()) {

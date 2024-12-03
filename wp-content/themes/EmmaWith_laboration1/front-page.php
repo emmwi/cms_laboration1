@@ -13,8 +13,6 @@ while (have_posts()) {
               <p>
               <div>
                 <?php echo  the_content();
-
-
                 ?>
               </div>
               </p>

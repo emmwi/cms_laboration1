@@ -88,6 +88,31 @@ function theme_widget_init()
     'after_title' => '</h3>',
   ]); //registrerar widget
 
+  register_sidebar([
+    'name' => 'footer-om-oss-text',
+    'id' => 'about-text-footer',
+    'before_widget' => '',
+    'after_widget' => '',
+    'before_title' => '<h4>',
+    'after_title' => '</h4>',
+  ]); //registrerar widget
+  register_sidebar([
+    'name' => 'footer-kontakt-text',
+    'id' => 'contact-text-footer',
+    'before_widget' => '',
+    'after_widget' => '',
+    'before_title' => '<h4>',
+    'after_title' => '</h4>',
+  ]); //registrerar widget
+
+  register_sidebar([
+    'name' => 'footer-sociala-länkar',
+    'id' => 'sociala-media-link-footer',
+    'before_widget' => '',
+    'after_widget' => '',
+    'before_title' => '<h4>',
+    'after_title' => '</h4>',
+  ]); //registrerar widget
 }
 add_action('widgets_init', 'theme_widget_init');
 

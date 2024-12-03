@@ -1,4 +1,3 @@
-page2?
 <?php
 get_header();
 while (have_posts()) {

@@ -1,4 +1,3 @@
-page undersida?
 <?php
 get_header();
 while (have_posts()) {

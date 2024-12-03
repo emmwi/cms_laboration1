@@ -40,6 +40,7 @@ function my_theme_setup()
 {
   add_theme_support('post-thumbnails');
   add_theme_support('menus');
+  add_theme_support('widgets');
 }
 add_action('after_setup_theme', 'my_theme_setup');
 
@@ -96,6 +97,3 @@ function custom_js_script()
   );
 }
 add_action('wp_enqueue_scripts', 'custom_js_script');
-
-
-register_nav_menu('mainmenu', 'Main menu in header.');

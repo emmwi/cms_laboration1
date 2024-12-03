@@ -1,16 +1,14 @@
 <?php
 get_header();
 ?>
-
-<?php
-while (have_posts()) {
-  the_post(); ?>
-  <section>
-    <div class="container">
-      <div class="row">
-        <div id="primary" class="col-xs-12 col-md-9">
-          <!-- behöver ändra hur denna h1an sitter -->
-          <h1>Blogg </h1>
+<section>
+  <div class="container">
+    <div class="row">
+      <div id="primary" class="col-xs-12 col-md-9">
+        <h1>Blogg </h1>
+        <?php
+        while (have_posts()) {
+          the_post(); ?>
           <article>
             <?php the_post_thumbnail(); ?>
             <h2 class=" title">
@@ -32,10 +30,16 @@ while (have_posts()) {
               <?php the_excerpt();
               ?></p>
           </article>
-        </div>
+
+        <?php
+        }
+
+        ?>
       </div>
+      <?php get_sidebar('blogg'); ?>
     </div>
-  </section>
+  </div>
+</section>
+
 <?php
-}
 get_footer();

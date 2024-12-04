@@ -35,7 +35,6 @@ function disable_block_widgets()
 }
 
 //Slut på gratis
-//sätta upp funktioner, att kunna använda biler och menyer att lägga till
 function my_theme_setup()
 {
   add_theme_support('post-thumbnails');

@@ -21,7 +21,8 @@ while (have_posts()) {
         </div>
       </div>
     </div>
-  <?php
+  </section>
+<?php
 
 }
 get_footer();

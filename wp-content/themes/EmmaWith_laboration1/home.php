@@ -19,7 +19,7 @@ get_header();
             </h2>
             <ul class="meta">
               <li>
-                <i class="fa fa-calendar"></i> <?php the_date() ?>
+                <i class="fa fa-calendar"></i> <?php get_the_date() ?>
               </li>
               <li>
                 <i class="fa fa-user"></i> <a href=<?php get_the_author_posts_link() ?>title="Inlägg av Anders Andersson" rel="author"><?php the_author() ?></a>

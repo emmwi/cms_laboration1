@@ -11,15 +11,9 @@ while (have_posts()) {
           <?php
           the_content(); ?>
         </div>
-        <!-- fixa aside med egen wordpress-meny -->
-        <!-- <aside id="secondary" class="col-xs-12 col-md-3 col-md-pull-9">
-          <ul id="menu-sidomeny" class="side-menu">
-            <li><a href="undersida.html">Undersida</a></li>
-            <li class="current-menu-item"><a href="undersida-2.html" aria-current="page">Undersida 2</a></li>
-            <li><a href="undersida-3.html">Undersida 3</a></li>
-            <li><a href="undersida-4.html">Undersida 4</a></li>
-          </ul>
-        </aside> -->
+        <aside id="secondary" class="col-xs-12 col-md-3 col-md-pull-9">
+          <?php get_sidebar('for-undersida') ?>
+        </aside>
       </div>
     </div>
   </section>

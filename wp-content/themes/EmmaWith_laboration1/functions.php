@@ -90,6 +90,14 @@ function labb1_widgets_init()
     'after_title' => '</h4>',
   ]); //registrerar widget
 
+  register_sidebar([
+    'name' => 'undersida aside',
+    'id' => 'undersida',
+    'before_widget' => '',
+    'after_widget' => '',
+    'before_title' => '<h4>',
+    'after_title' => '</h4>',
+  ]); //registrerar widget
 }
 add_action('widgets_init', 'labb1_widgets_init');
 

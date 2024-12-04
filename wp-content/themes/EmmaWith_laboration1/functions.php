@@ -44,51 +44,16 @@ function labb1_after_setup_theme()
 }
 add_action('after_setup_theme', 'labb1_after_setup_theme');
 
-
-// function wp_nav_menu_no_div($args)
-// {
-//   // tar bort container
-//   $args['container'] = false;
-
-//   return $args;
-// }
-// add_filter('wp_nav_menu_args', 'wp_nav_menu_no_div');
-
 function labb1_widgets_init()
 {
   register_sidebar([
-    'name' => 'search-blog-side',
-    'id' => 'search',
+    'name' => 'aside för blogg',
+    'id' => 'blogg',
     'before_widget' => '',
     'after_widget' => '',
     'before_title' => '<h3 >',
     'after_title' => '</h3>',
-  ]); //registrerar widget
-  register_sidebar([
-    'name' => 'pages-blog-side',
-    'id' => 'nav-pages',
-    'before_widget' => '',
-    'after_widget' => '',
-    'before_title' => '<h3 >',
-    'after_title' => '</h3>',
-  ]); //registrerar widget
-  register_sidebar([
-    'name' => 'arkiv-blog-side',
-    'id' => 'nav-arkiv',
-    'before_widget' => '',
-    'after_widget' => '',
-    'before_title' => '<h3 >',
-    'after_title' => '</h3>',
-  ]); //registrerar widget
-  register_sidebar([
-    'name' => 'category-blog-side',
-    'id' => 'nav-category',
-    'before_widget' => '',
-    'after_widget' => '',
-    'before_title' => '<h3 >',
-    'after_title' => '</h3>',
-  ]); //registrerar widget
-
+  ]); //registrerar widgets
   register_sidebar([
     'name' => 'footer-om-oss-text',
     'id' => 'about-text-footer',
@@ -115,24 +80,17 @@ function labb1_widgets_init()
     'after_title' => '</h4>',
   ]); //registrerar widget
 
-  // register_sidebar([
-  //   'name' => 'aside-undersida',
-  //   'id' => 'aside-page',
-  //   'before_widget' => '',
-  //   'after_widget' => '',
-  //   'before_title' => '<h4>',
-  //   'after_title' => '</h4>',
-  // ]); //registrerar widget
-  register_sidebar([
-    'name' => 'aside-blogg',
-    'id' => 'blogg_aside',
-    'before_widget' => '',
-    'after_widget' => '',
-    'before_title' => '<h4>',
-    'after_title' => '</h4>',
-  ]); //r
 }
 add_action('widgets_init', 'labb1_widgets_init');
+function wp_nav_menu_no_div($args)
+{
+  // tar bort container
+  $args['container'] = false;
+
+  return $args;
+}
+add_filter('wp_nav_menu_args', 'wp_nav_menu_no_div');
+
 
 //lägga till styling
 function css_inks()

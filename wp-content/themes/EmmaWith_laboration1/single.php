@@ -30,10 +30,13 @@ get_header(); ?>
                 ?></p>
             </article>
         </div>
-
-      <?php
+        <aside id="secondary" class="col-xs-12 col-md-3">
+          <div id="sidebar">
+          <?php
           }
           get_sidebar('blogg'); ?>
+          </div>
+        </aside>
       </div>
     </div>
   </section>

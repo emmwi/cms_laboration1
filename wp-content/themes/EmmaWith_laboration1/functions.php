@@ -35,26 +35,26 @@ function disable_block_widgets()
 }
 
 //Slut på gratis
-function my_theme_setup()
+function labb1_after_setup_theme()
 {
   add_theme_support('post-thumbnails');
   add_theme_support('menus');
   add_theme_support('widgets');
   add_theme_support('title-tag');
 }
-add_action('after_setup_theme', 'my_theme_setup');
+add_action('after_setup_theme', 'labb1_after_setup_theme');
 
 
-function wp_nav_menu_no_div($args)
-{
-  //sätter tar bort container
-  $args['container'] = false;
+// function wp_nav_menu_no_div($args)
+// {
+//   // tar bort container
+//   $args['container'] = false;
 
-  return $args;
-}
-add_filter('wp_nav_menu_args', 'wp_nav_menu_no_div');
+//   return $args;
+// }
+// add_filter('wp_nav_menu_args', 'wp_nav_menu_no_div');
 
-function theme_widget_init()
+function labb1_widgets_init()
 {
   register_sidebar([
     'name' => 'search-blog-side',
@@ -115,17 +115,24 @@ function theme_widget_init()
     'after_title' => '</h4>',
   ]); //registrerar widget
 
+  // register_sidebar([
+  //   'name' => 'aside-undersida',
+  //   'id' => 'aside-page',
+  //   'before_widget' => '',
+  //   'after_widget' => '',
+  //   'before_title' => '<h4>',
+  //   'after_title' => '</h4>',
+  // ]); //registrerar widget
   register_sidebar([
-    'name' => 'aside-undersida',
-    'id' => 'aside-page',
+    'name' => 'aside-blogg',
+    'id' => 'blogg_aside',
     'before_widget' => '',
     'after_widget' => '',
     'before_title' => '<h4>',
     'after_title' => '</h4>',
-  ]); //registrerar widget
-
+  ]); //r
 }
-add_action('widgets_init', 'theme_widget_init');
+add_action('widgets_init', 'labb1_widgets_init');
 
 //lägga till styling
 function css_inks()
@@ -138,11 +145,11 @@ function css_inks()
 add_action('wp_enqueue_scripts', 'css_inks');
 
 //lägger till två filter för excerpt hooken
-function custom_excerpt_length($length)
+function labb1_excerpt_length($length)
 {
   return 66;
 }
-add_filter('excerpt_length', 'custom_excerpt_length');
+add_filter('excerpt_length', 'labb1_excerpt_length');
 //över returnerar 66 karaktärer och under tar vi bort vad som kommer ist för ....
 function custom_excerpt_more()
 {
@@ -151,7 +158,7 @@ function custom_excerpt_more()
 add_filter('excerpt_more', 'custom_excerpt_more');
 
 
-function js_theme_script()
+function labb1_wp_enqueue_scripts()
 {
   wp_enqueue_script(
     'labb1_jquery',
@@ -163,4 +170,4 @@ function js_theme_script()
 
   wp_enqueue_script('ew-js-theme-script', get_template_directory_uri() . '/js/script.js', array('labb1_jquery'), '', true);
 }
-add_action('wp_enqueue_scripts', 'js_theme_script');
+add_action('wp_enqueue_scripts', 'labb1_wp_enqueue_scripts');

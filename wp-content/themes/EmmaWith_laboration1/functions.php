@@ -58,10 +58,10 @@ function labb1_widgets_init()
   register_sidebar([
     'name' => 'Länkar i blogg aside',
     'id' => 'nav-link',
-    'before_widget' => '',
-    'after_widget' => '',
-    'before_title' => '<h3 >',
-    'after_title' => '</h3>',
+    'before_widget' => "<li class='widget'>",
+    'after_widget' => '</li>',
+    'before_title' => '<h2 >',
+    'after_title' => '</h2>',
   ]); //registrerar widget
 
   register_sidebar([
@@ -94,6 +94,7 @@ function labb1_widgets_init()
 add_action('widgets_init', 'labb1_widgets_init');
 
 
+//egen funktion
 function wp_nav_menu_no_div($args)
 {
   // ian har godkänt denna för Emma 4/12
@@ -102,6 +103,16 @@ function wp_nav_menu_no_div($args)
   return $args;
 }
 add_filter('wp_nav_menu_args', 'wp_nav_menu_no_div');
+
+function labb_1_nav_menu_css_class($classes, $item, $args)
+{
+  if (isset($args->add_li_class)) {
+    $classes[] = $args->add_li_class;
+  }
+  return $classes;
+}
+
+add_filter('nav_menu_css_class', 'labb_1_nav_menu_css_class', 10, 3);
 
 
 //lägga till styling

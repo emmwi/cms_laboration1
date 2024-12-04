@@ -9,6 +9,7 @@ get_header();
         <?php
         while (have_posts()) {
           the_post(); ?>
+
           <article>
             <?php the_post_thumbnail(); ?>
             <h2 class=" title">
@@ -19,18 +20,16 @@ get_header();
                 <i class="fa fa-calendar"></i> <?php the_date() ?>
               </li>
               <li>
-                <i class="fa fa-user"></i> <a href="forfattare.html" title="Inlägg av Anders Andersson" rel="author"><?php the_author() ?></a></a>
+                <i class="fa fa-user"></i> <a href="forfattare.html" title="Inlägg av Anders Andersson" rel="author"><?php the_author() ?></a>
               </li>
               <li>
                 <i class="fa fa-tag"></i> <?php the_category(' , ') ?></a>
               </li>
             </ul>
-
             <p>
               <?php the_excerpt();
               ?></p>
           </article>
-
         <?php
         }
         echo get_the_posts_pagination([
@@ -40,11 +39,40 @@ get_header();
           'screen_reader_text' => __('Sidonumrering för inlägg'),
         ]);
         ?>
+
       </div>
-      <?php get_sidebar('blogg'); ?>
+
+      <aside id="secondary" class="col-xs-12 col-md-3">
+
+        <div id="sidebar">
+          <ul>
+            <li id="search-2" class="widget widget_search">
+              <?php
+              dynamic_sidebar('search'); ?>
+            </li>
+          </ul>
+          <ul role="navigation">
+            <li id="pages-2" class="widget widget_pages">
+              <?php dynamic_sidebar('nav-pages'); ?>
+            </li>
+            <li id="archives-2" class="widget widget_archive">
+              <?php dynamic_sidebar('nav-arkiv'); ?>
+            </li>
+            <li id="categories-2" class="widget widget_categories">
+              <h2 class="widgettitle">Kategorier</h2>
+
+              <ul>
+                <li class="cat-item cat-item-3"><?php dynamic_sidebar('nav-category'); ?>
+                </li>
+              </ul>
+
+            </li>
+          </ul>
+        </div>
+      </aside>
     </div>
   </div>
 </section>
-
 <?php
 get_footer();
+?>

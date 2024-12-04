@@ -1,11 +1,10 @@
+autohsida
+
 <section>
   <div class="container">
     <div class="row">
       <div id="primary" class="col-xs-12 col-md-9">
         <h1>Författare: <span>Anders Andersson</span> </h1>
-
-
-
         <article>
           <img src="img/washington.jpg" />
           <h2 class="title">
@@ -16,6 +15,7 @@
               <i class="fa fa-calendar"></i> 18 november 2024
             </li>
             <li>
+              <?php echo get_the_author_posts_link(); ?>
               <i class="fa fa-user"></i> <a href="forfattare.html" title="Inlägg av Anders Andersson" rel="author">Anders Andersson</a></a>
             </li>
             <li>

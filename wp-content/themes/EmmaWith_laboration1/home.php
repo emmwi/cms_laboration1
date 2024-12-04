@@ -22,7 +22,8 @@ get_header();
                 <i class="fa fa-calendar"></i> <?php get_the_date() ?>
               </li>
               <li>
-                <i class="fa fa-user"></i> <a href=<?php get_the_author_posts_link() ?>title="Inlägg av Anders Andersson" rel="author"><?php the_author() ?></a>
+                banan
+                <i class="fa fa-user"></i> <?php echo get_the_author_posts_link(); ?>
               </li>
               <li>
                 <i class="fa fa-tag"></i> <?php the_category(' , ') ?></a>
@@ -39,7 +40,7 @@ get_header();
           'prev-text' => 'Föregående',
           'next-text' => 'Nästa',
           'screen_reader_text' => __('Sidonumrering för inlägg'),
-         
+
         ]);
         ?>
         efter funktion banan

@@ -15,6 +15,8 @@ while (have_posts()) {
           <?php the_post_thumbnail(); ?>
         </div>
       </div>
+
+    </div>
     </div>
   </section>
 <?php

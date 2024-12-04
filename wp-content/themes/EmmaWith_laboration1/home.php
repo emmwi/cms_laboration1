@@ -33,7 +33,12 @@ get_header();
 
         <?php
         }
-
+        echo get_the_posts_pagination([
+          'mid-size' => 2,
+          'prev-text' => 'Föregående',
+          'next-text' => 'Nästa',
+          'screen_reader_text' => __('Sidonumrering för inlägg'),
+        ]);
         ?>
       </div>
       <?php get_sidebar('blogg'); ?>

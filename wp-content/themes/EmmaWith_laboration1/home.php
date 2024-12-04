@@ -59,13 +59,7 @@ get_header();
               <?php dynamic_sidebar('nav-arkiv'); ?>
             </li>
             <li id="categories-2" class="widget widget_categories">
-              <h2 class="widgettitle">Kategorier</h2>
-
-              <ul>
-                <li class="cat-item cat-item-3"><?php dynamic_sidebar('nav-category'); ?>
-                </li>
-              </ul>
-
+            <li class="cat-item cat-item-3"><?php dynamic_sidebar('nav-category'); ?>
             </li>
           </ul>
         </div>

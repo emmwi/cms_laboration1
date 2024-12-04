@@ -151,25 +151,16 @@ function custom_excerpt_more()
 add_filter('excerpt_more', 'custom_excerpt_more');
 
 
-//funkar inte som tänkt får kolla på detta sen
-// function my_theme_script()
-// {
-//   wp_enqueue_script('jquery');
-//   wp_enqueue_script('my-js-theme-script', get_template_directory_uri() . '/js/script.js', array('jquery'), '', true);
-// }
-// add_action('wp_enqueue_scripts', 'my_theme_script');
+function js_theme_script()
+{
+  wp_enqueue_script(
+    'labb1_jquery',
+    get_template_directory_uri()  . '/js/jquery.js',
+    array(),
+    '',
+    false
+  );
 
-// function js_theme_script()
-// {
-//   wp_enqueue_script(
-//     'jquery',
-//     includes_url('/js/jquery/jquery.js'),
-//     array(),
-//     null,
-//     false
-//   );
-//   // wp_enqueue_script('jquery');
-//   //funkar inte att hämta från css mappen så använder wordpress egna
-//   wp_enqueue_script('my-js-theme-script', get_template_directory_uri() . '/js/script.js', array('jquery'), '', true);
-// }
-// add_action('wp_enqueue_scripts', 'js_theme_script');
+  wp_enqueue_script('ew-js-theme-script', get_template_directory_uri() . '/js/script.js', array('labb1_jquery'), '', true);
+}
+add_action('wp_enqueue_scripts', 'js_theme_script');

@@ -39,9 +39,18 @@ get_header();
           'prev-text' => 'Föregående',
           'next-text' => 'Nästa',
           'screen_reader_text' => __('Sidonumrering för inlägg'),
+         
         ]);
         ?>
-
+        efter funktion banan
+        innan htmlentities banan
+        <nav class="navigation pagination" aria-label="Sidonumrering för inlägg">
+          <h2 class="screen-reader-text">Sidonumrering för inlägg</h2>
+          <span aria-current="page" class="page-numbers current">1</span>
+          <a class="page-numbers" href="">2</a>
+          <a class="next page-numbers" href="">Nästa</a>
+        </nav>
+        efter htmlbanan
       </div>
 
       <aside id="secondary" class="col-xs-12 col-md-3">

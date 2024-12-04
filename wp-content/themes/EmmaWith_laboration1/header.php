@@ -6,7 +6,9 @@
 </head>
 
 <body>
-  <?php wp_body_open() ?>
+
+  <?php body_class();
+  wp_body_open() ?>
   <div id="wrap">
     <header id="header">
       <div class="container">

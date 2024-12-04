@@ -47,7 +47,7 @@ get_header();
       <aside id="secondary" class="col-xs-12 col-md-3">
         <div id="sidebar">
           <?php
-          get_sidebar('undersida');
+          get_sidebar('for-blogg')
           ?>
         </div>
       </aside>

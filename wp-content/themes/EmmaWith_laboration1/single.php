@@ -34,7 +34,8 @@ get_header(); ?>
           <div id="sidebar">
           <?php
           }
-          get_sidebar('blogg'); ?>
+          // get_sidebar('blogg'); 
+          ?>
           </div>
         </aside>
       </div>

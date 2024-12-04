@@ -47,13 +47,23 @@ add_action('after_setup_theme', 'labb1_after_setup_theme');
 function labb1_widgets_init()
 {
   register_sidebar([
-    'name' => 'aside för blogg',
-    'id' => 'blogg',
+    'name' => 'Sök funktion blogg aside',
+    'id' => 'search',
+    'before_widget' => '',
+    'after_widget' => '',
+    'before_title' => '',
+    'after_title' => '',
+  ]); //registrerar widget
+
+  register_sidebar([
+    'name' => 'Länkar i blogg aside',
+    'id' => 'nav-link',
     'before_widget' => '',
     'after_widget' => '',
     'before_title' => '<h3 >',
     'after_title' => '</h3>',
-  ]); //registrerar widgets
+  ]); //registrerar widget
+
   register_sidebar([
     'name' => 'footer-om-oss-text',
     'id' => 'about-text-footer',
@@ -82,9 +92,11 @@ function labb1_widgets_init()
 
 }
 add_action('widgets_init', 'labb1_widgets_init');
+
+
 function wp_nav_menu_no_div($args)
 {
-  // tar bort container
+  // ian har godkänt denna för Emma 4/12
   $args['container'] = false;
 
   return $args;

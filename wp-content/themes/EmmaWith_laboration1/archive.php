@@ -10,7 +10,7 @@ while (have_posts()) {
           <h1><?php
               the_archive_title(); ?></h1>
           <article>
-            <?php the_post_thumbnail(); ?>
+            <img src="<?php the_post_thumbnail_url(); ?>">
             <h1><?php the_title(); ?></h1>
             <ul class="meta">
               <li>

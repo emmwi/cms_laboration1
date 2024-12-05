@@ -48,6 +48,10 @@ function labb1_after_setup_theme()
     'secondary' => __('Undersidor', 'labb1'),
   ]);
 }
+// ok att använda menus ist för menu?
+// register_nav_menu('primary', __('NavBar', 'labb1'));
+// register_nav_menu('secondary', __('Undersidor', 'labb1'));
+
 add_action('after_setup_theme', 'labb1_after_setup_theme');
 
 function labb1_widgets_init()
@@ -159,11 +163,11 @@ function labb1_excerpt_length($length)
 }
 add_filter('excerpt_length', 'labb1_excerpt_length');
 //över returnerar 66 karaktärer och under tar vi bort vad som kommer ist för ....
-function custom_excerpt_more()
+function labb1_excerpt_more()
 {
   return '';
 }
-add_filter('excerpt_more', 'custom_excerpt_more');
+add_filter('excerpt_more', 'labb1_excerpt_more');
 
 
 function labb1_wp_enqueue_scripts()

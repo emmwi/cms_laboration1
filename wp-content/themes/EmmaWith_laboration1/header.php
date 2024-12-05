@@ -6,7 +6,6 @@
 </head>
 
 <body>
-
   <?php body_class();
   wp_body_open() ?>
   <div id="wrap">
@@ -30,13 +29,7 @@
     </header>
 
     <div class="mobile-search">
-      <form class="searchform">
-        <div>
-          <label class="screen-reader-text">Sök efter:</label>
-          <input type="text" />
-          <input type="submit" value="Sök" />
-        </div>
-      </form>
+      <?php get_search_form(); ?>
     </div>
     <nav id="nav">
       <div class="container">

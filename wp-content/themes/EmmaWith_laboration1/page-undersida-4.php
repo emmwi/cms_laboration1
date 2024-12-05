@@ -18,7 +18,5 @@ while (have_posts()) {
   </section>
 <?php
 } ?>
-
-
 <?php
 get_footer();

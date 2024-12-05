@@ -8,11 +8,11 @@ while (have_posts()) {
       <div class="row">
         <div class="col-xs-12">
           <div class="hero">
-            <img src="<?php echo get_the_post_thumbnail_url() ?>" alt="">
+            <img src="<?php the_post_thumbnail_url() ?>" />
             <div class="text">
               <p>
               <div>
-                <?php echo  the_content();
+                <?php the_content();
                 ?>
               </div>
               </p>
@@ -23,6 +23,5 @@ while (have_posts()) {
     </div>
   </section>
 <?php
-
 }
 get_footer();

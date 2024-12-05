@@ -12,20 +12,19 @@ get_header();
           the_post();
         ?>
           <article>
-            <?php the_post_thumbnail(); ?>
+            <img src="<?php the_post_thumbnail_url(); ?>">
             <h2 class=" title">
               <a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
             </h2>
             <ul class="meta">
               <li>
-                <i class="fa fa-calendar"></i> <?php get_the_date() ?>
+                <i class="fa fa-calendar"></i> <?php echo get_the_date() ?>
               </li>
               <li>
-                banan
                 <i class="fa fa-user"></i> <?php echo get_the_author_posts_link(); ?>
               </li>
               <li>
-                <i class="fa fa-tag"></i> <?php the_category(' , ') ?></a>
+                <i class="fa fa-tag"></i> <?php echo get_the_category_list(', ') ?></a>
               </li>
             </ul>
             <p>
@@ -39,11 +38,9 @@ get_header();
           'prev-text' => 'Föregående',
           'next-text' => 'Nästa',
           'screen_reader_text' => __('Sidonumrering för inlägg'),
-
         ]);
         ?>
       </div>
-
       <aside id="secondary" class="col-xs-12 col-md-3">
         <div id="sidebar">
           <?php

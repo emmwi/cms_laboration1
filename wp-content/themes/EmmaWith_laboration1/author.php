@@ -13,7 +13,7 @@ get_header();
         ?>
 
           <article>
-            <?php the_post_thumbnail(); ?>
+            <img src="<?php the_post_thumbnail_url() ?>" />
             <h2 class=" title">
               <a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
             </h2>
@@ -43,17 +43,8 @@ get_header();
 
         ]);
         ?>
-        efter funktion banan
-        innan htmlentities banan
-        <nav class="navigation pagination" aria-label="Sidonumrering för inlägg">
-          <h2 class="screen-reader-text">Sidonumrering för inlägg</h2>
-          <span aria-current="page" class="page-numbers current">1</span>
-          <a class="page-numbers" href="">2</a>
-          <a class="next page-numbers" href="">Nästa</a>
-        </nav>
-        efter htmlbanan
-      </div>
 
+      </div>
       <aside id="secondary" class="col-xs-12 col-md-3">
         <div id="sidebar">
           <?php

@@ -2,7 +2,6 @@
 get_header();
 while (have_posts()) {
   the_post(); ?>
-
   <section>
     <div class="container">
       <div class="row">

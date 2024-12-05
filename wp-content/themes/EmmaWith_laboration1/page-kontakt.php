@@ -10,7 +10,6 @@ while (have_posts()) {
           <?php
           the_content(); ?>
         </div>
-
       </div>
     </div>
   </section>

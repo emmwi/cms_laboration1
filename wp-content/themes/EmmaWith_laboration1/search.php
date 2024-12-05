@@ -1,4 +1,6 @@
-search php
+<?php
+get_header();
+?>
 <section>
   <div class="container">
     <div class="row">
@@ -52,3 +54,5 @@ search php
     </div>
   </div>
 </section>
+<?php
+get_footer();

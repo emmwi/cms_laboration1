@@ -160,3 +160,15 @@ function labb1_wp_enqueue_scripts()
   wp_enqueue_script('ew-js-theme-script', get_template_directory_uri() . '/js/script.js', array('labb1_jquery'), '', true);
 }
 add_action('wp_enqueue_scripts', 'labb1_wp_enqueue_scripts');
+
+
+
+//kolla med ian om den får vara med - översättning av month till månad på arkiv
+function ew_translate_archive_title($title, $original_title, $prefix)
+{
+  if (is_month()) {
+    $title = str_replace('Month:', 'Månad:', $title);
+  }
+  return $title;
+}
+add_filter('get_the_archive_title', 'ew_translate_archive_title', 10, 3);

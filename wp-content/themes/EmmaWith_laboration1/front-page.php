@@ -11,10 +11,8 @@ while (have_posts()) {
             <img src="<?php the_post_thumbnail_url() ?>" />
             <div class="text">
               <p>
-              <div>
                 <?php the_content();
                 ?>
-              </div>
               </p>
             </div>
           </div>

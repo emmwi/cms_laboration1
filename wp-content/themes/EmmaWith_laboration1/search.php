@@ -21,10 +21,10 @@ get_header();
               </h2>
               <ul class="meta">
                 <li>
-                  <i class="fa fa-calendar"></i> <?php get_the_date() ?>
+                  <i class="fa fa-calendar"></i> <?php echo get_the_date() ?>
                 </li>
                 <li>
-                  <i class="fa fa-user"></i> <?php echo get_the_author_posts_link(); ?>
+                  <i class="fa fa-user"></i> <?php echo get_the_author_posts_link(); ?></a>
                 </li>
                 <li>
                   <i class="fa fa-tag"></i> <?php the_category(' , ') ?></a>

@@ -12,10 +12,10 @@ get_header(); ?>
             <h1><?php single_post_title(); ?></h1>
             <ul class="meta">
               <li>
-                <i class="fa fa-calendar"></i> <?php the_date() ?>
+                <i class="fa fa-calendar"></i> <?php echo get_the_date() ?>
               </li>
               <li>
-                <i class="fa fa-user"></i> <a href="forfattare.html" title="Inlägg av Anders Andersson" rel="author"><?php the_author() ?></a>
+                <i class="fa fa-user"></i> <?php echo get_the_author_posts_link(); ?>
               </li>
               <li>
                 <i class="fa fa-tag"></i> <?php the_category(' , ') ?></a>

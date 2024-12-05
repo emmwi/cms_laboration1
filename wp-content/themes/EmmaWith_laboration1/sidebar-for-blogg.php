@@ -1,5 +1,5 @@
 <ul>
-  <li>
+  <li id="search-2" class="widget widget_search">
     <?php dynamic_sidebar('search') ?>
   </li>
 </ul>

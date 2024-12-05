@@ -10,21 +10,21 @@ while (have_posts()) {
           <h1><?php
               the_archive_title(); ?></h1>
           <article>
-            <img src="<?php the_post_thumbnail_url(); ?>">
+            <img src="<?php the_post_thumbnail_url(); ?>" />
             <h1><?php the_title(); ?></h1>
             <ul class="meta">
               <li>
                 <i class="fa fa-calendar"></i> <?php the_date() ?>
               </li>
               <li>
-                <i class="fa fa-user"></i> <a href="forfattare.html" title="Inlägg av Anders Andersson" rel="author"><?php the_author() ?></a>
+                <i class="fa fa-user"></i> <?php echo get_the_author_posts_link(); ?></a>
               </li>
               <li>
-                <i class="fa fa-tag"></i> <?php the_category(' , ') ?></a>
+                <i class="fa fa-tag"></i> <?php the_category(' , ') ?>
               </li>
             </ul>
             <p>
-              <?php the_content();
+              <?php the_excerpt();
               ?></p>
           </article>
         </div>

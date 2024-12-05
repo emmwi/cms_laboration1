@@ -8,8 +8,10 @@ while (have_posts()) {
         <div class="row">
           <div id="primary" class="col-xs-12">
             <h1> <?php the_title(); ?></h1>
-            <?php
-            the_content(); ?>
+            <p>
+              <?php
+              the_content(); ?>
+            </p>
           </div>
 
         </div>

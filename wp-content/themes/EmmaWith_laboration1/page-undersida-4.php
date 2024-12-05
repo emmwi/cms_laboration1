@@ -11,7 +11,8 @@ while (have_posts()) {
           the_content(); ?>
         </div>
         <div class="col-xs-12 col-sm-4 col-md-6">
-          <?php the_post_thumbnail('large', ['class' => 'img-fluid', 'style' => 'width:auto; height:auto;']); ?>
+          <img src="<?php the_post_thumbnail_url(); ?>">
+
         </div>
       </div>
     </div>

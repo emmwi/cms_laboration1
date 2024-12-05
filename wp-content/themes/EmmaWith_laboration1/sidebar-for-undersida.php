@@ -1,7 +1,8 @@
 
 <?php
 wp_nav_menu([
-  'menu' => '12',
+
+  'theme_location' => 'secondary',
   'menu_class' => 'side-menu',
   'contiainer' => 'false',
 ])

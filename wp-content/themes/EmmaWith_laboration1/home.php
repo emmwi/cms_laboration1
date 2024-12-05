@@ -10,9 +10,7 @@ get_header();
         <?php
         while (have_posts()) {
           the_post();
-
         ?>
-
           <article>
             <?php the_post_thumbnail(); ?>
             <h2 class=" title">
@@ -35,7 +33,6 @@ get_header();
               ?></p>
           </article>
         <?php
-
         }
         echo get_the_posts_pagination([
           'mid-size' => 2,
@@ -45,15 +42,6 @@ get_header();
 
         ]);
         ?>
-        efter funktion banan
-        innan htmlentities banan
-        <nav class="navigation pagination" aria-label="Sidonumrering för inlägg">
-          <h2 class="screen-reader-text">Sidonumrering för inlägg</h2>
-          <span aria-current="page" class="page-numbers current">1</span>
-          <a class="page-numbers" href="">2</a>
-          <a class="next page-numbers" href="">Nästa</a>
-        </nav>
-        efter htmlbanan
       </div>
 
       <aside id="secondary" class="col-xs-12 col-md-3">

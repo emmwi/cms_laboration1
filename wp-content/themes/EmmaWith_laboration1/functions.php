@@ -41,6 +41,12 @@ function labb1_after_setup_theme()
   add_theme_support('menus');
   add_theme_support('widgets');
   add_theme_support('title-tag');
+
+  //registerar två av mina navbars
+  register_nav_menus([
+    'primary'   => __('NavBar', 'labb1'),
+    'secondary' => __('Undersidor', 'labb1'),
+  ]);
 }
 add_action('after_setup_theme', 'labb1_after_setup_theme');
 
@@ -112,10 +118,23 @@ function wp_nav_menu_no_div($args)
 }
 add_filter('wp_nav_menu_args', 'wp_nav_menu_no_div');
 
+
+//funktion som tar bort id och class från menyerna
 function labb_1_nav_menu_css_class($classes, $item, $args)
 {
-  if (isset($args->add_li_class)) {
-    $classes[] = $args->add_li_class;
+  //tar bort klasser och id om menyn har theme_location 'secondary'
+  if ($args->theme_location == 'secondary') {
+    $classes = [];
+    $item->ID = '';
+  }
+  //tar bort klasser och id om menyn har theme_locatin 'primary'
+  if ($args->theme_location == 'primary') {
+    $classes = [];
+    $item->ID = '';
+  }
+  //ska lägga till classen 'current-menu-item' om item har urlen som permalinken ger
+  if (is_page() && $item->url === get_permalink()) {
+    $classes[] = 'current-menu-item';
   }
   return $classes;
 }
@@ -178,3 +197,15 @@ function ew_translate_archive_title($title, $original_title, $prefix)
   return $title;
 }
 add_filter('get_the_archive_title', 'ew_translate_archive_title', 10, 3);
+
+
+function labb1_navigation_markup_template($template, $class)
+{
+  $template =
+    '<nav class="navigation %1$s" aria-label="%4$s">
+    <h2 class="screen-reader-text">%2$s</h2>
+  %3$s
+  </nav>';
+  return $template;
+}
+add_filter('navigation_markup_template', 'labb1_navigation_markup_template', 10, 2);

@@ -45,7 +45,7 @@
             <?php
             wp_nav_menu(
               [
-                'menu' => 6,
+                'theme_location' => 'primary',
                 'container' => ' ',
                 'menu_class' => 'menu',
                 'menu_id' => 'menu-huvudmeny',

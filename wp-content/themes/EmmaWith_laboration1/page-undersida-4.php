@@ -12,7 +12,6 @@ while (have_posts()) {
         </div>
         <div class="col-xs-12 col-sm-4 col-md-6">
           <img src="<?php the_post_thumbnail_url(); ?>">
-
         </div>
       </div>
     </div>

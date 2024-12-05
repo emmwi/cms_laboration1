@@ -11,12 +11,9 @@ while (have_posts()) {
           the_content(); ?>
         </div>
         <div class="col-xs-12 col-sm-4 col-md-6">
-          hörasjaajbanan
-          <?php the_post_thumbnail(); ?>
+          <?php the_post_thumbnail('large', ['class' => 'img-fluid', 'style' => 'width:auto; height:auto;']); ?>
         </div>
       </div>
-
-    </div>
     </div>
   </section>
 <?php

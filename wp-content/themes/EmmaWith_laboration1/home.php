@@ -1,6 +1,5 @@
 <?php
 get_header();
-$count = 0;
 ?>
 <section>
   <div class="container">
@@ -11,7 +10,7 @@ $count = 0;
         <?php
         while (have_posts()) {
           the_post();
-          $count++
+
         ?>
 
           <article>
@@ -38,7 +37,6 @@ $count = 0;
         <?php
 
         }
-
         echo get_the_posts_pagination([
           'mid-size' => 2,
           'prev-text' => 'Föregående',
@@ -46,8 +44,6 @@ $count = 0;
           'screen_reader_text' => __('Sidonumrering för inlägg'),
 
         ]);
-
-
         ?>
         efter funktion banan
         innan htmlentities banan

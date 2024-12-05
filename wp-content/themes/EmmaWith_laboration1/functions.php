@@ -172,6 +172,9 @@ function ew_translate_archive_title($title, $original_title, $prefix)
   if (is_category()) {
     $title = str_replace('Category:', 'Kategori:', $title);
   }
+  if (is_author()) {
+    $title = str_replace('Author:', 'Författare:', $title);
+  }
   return $title;
 }
 add_filter('get_the_archive_title', 'ew_translate_archive_title', 10, 3);

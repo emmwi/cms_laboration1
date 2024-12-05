@@ -9,50 +9,40 @@ get_header();
         <div class="searchform-wrap">
           <?php get_search_form(); ?>
         </div>
-        <article>
-          <img src="img/washington.jpg" />
-          <h2 class="title">
-            <a href="inlagg.html">Det tredje inlägget</a>
-          </h2>
-          <ul class="meta">
-            <li>
-              <i class="fa fa-calendar"></i> 18 november 2024
-            </li>
-            <li>
-              <i class="fa fa-user"></i> <a href="forfattare.html" title="Inlägg av Anders Andersson" rel="author">Anders Andersson</a></a>
-            </li>
-            <li>
-              <i class="fa fa-tag"></i> <a href="kategori.html" rel="category tag">Kategori 1</a>, <a href="kategori.html" rel="category tag">Kategori 2</a>
-            </li>
-          </ul>
-          <p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed sodales mauris. Aliquam felis est, efficitur vel fringilla quis, vehicula quis ex. Phasellus tristique nunc in leo faucibus, a consequat nulla sagittis. In sed mi mi. Praesent condimentum sollicitudin nibh. Vivamus vulputate purus quis volutpat fringilla. Ut tortor libero, semper eget dolor vel, hendrerit tempus dui. Suspendisse dictum efficitur blandit. In porta scelerisque nulla ac placerat.</p>
-          </p>
-        </article>
-
-        <article>
-          <img src="img/paris.jpg" />
-          <h2 class="title">
-            <a href="inlagg.html">Mitt andra inlägg</a>
-          </h2>
-          <ul class="meta">
-            <li>
-              <i class="fa fa-calendar"></i> 2 oktober 2024
-            </li>
-            <li>
-              <i class="fa fa-user"></i> <a href="forfattare.html" title="Inlägg av Anders Andersson" rel="author">Anders Andersson</a></a>
-            </li>
-            <li>
-              <i class="fa fa-tag"></i> <a href="kategori.html" rel="category tag">Kategori 1</a>, <a href="kategori.html" rel="category tag">Kategori 2</a>
-            </li>
-          </ul>
-          <p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed sodales mauris. Aliquam felis est, efficitur vel fringilla quis, vehicula quis ex. Phasellus tristique nunc in leo faucibus, a consequat nulla sagittis. In sed mi mi. Praesent condimentum sollicitudin nibh. Vivamus vulputate purus quis volutpat fringilla. Ut tortor libero, semper eget dolor vel, hendrerit tempus dui. Suspendisse dictum efficitur blandit. In porta scelerisque nulla ac placerat.</p>
-          </p>
-        </article>
+        <?php
+        if (have_posts()) {
+          while (have_posts()) {
+            the_post();
+        ?>
+            <article>
+              <?php the_post_thumbnail(); ?>
+              <h2 class=" title">
+                <a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
+              </h2>
+              <ul class="meta">
+                <li>
+                  <i class="fa fa-calendar"></i> <?php get_the_date() ?>
+                </li>
+                <li>
+                  <i class="fa fa-user"></i> <?php echo get_the_author_posts_link(); ?>
+                </li>
+                <li>
+                  <i class="fa fa-tag"></i> <?php the_category(' , ') ?></a>
+                </li>
+              </ul>
+              <p>
+                <?php the_excerpt();
+                ?></p>
+            </article>
+        <?php
+          }
+        } else {
+          echo "<p> Det finns inget innehåll som matchar din sökning </p>";
+        } ?>
       </div>
     </div>
   </div>
 </section>
 <?php
+
 get_footer();

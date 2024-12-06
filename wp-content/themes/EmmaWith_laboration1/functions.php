@@ -48,9 +48,7 @@ function labb1_after_setup_theme()
     'secondary' => __('Undersidor', 'labb1'),
   ]);
 }
-// ok att använda menus ist för menu?
-// register_nav_menu('primary', __('NavBar', 'labb1'));
-// register_nav_menu('secondary', __('Undersidor', 'labb1'));
+
 
 add_action('after_setup_theme', 'labb1_after_setup_theme');
 

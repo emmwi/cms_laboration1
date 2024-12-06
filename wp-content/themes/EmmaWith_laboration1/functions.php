@@ -132,7 +132,7 @@ function labb_1_nav_menu_css_class($classes, $item, $args)
   //tar bort klasser och id om menyn har theme_locatin 'primary'
   if ($args->theme_location == 'primary') {
     $classes = [];
-    $item->ID = ''; //försöka fixa denna eller kolla om de är ok att id menu_item finns på navbaren
+    $item->ID = '';
   }
   //ska lägga till classen 'current-menu-item' om item har urlen som permalinken ger
   if (is_page() && $item->url === get_permalink()) {

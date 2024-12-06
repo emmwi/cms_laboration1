@@ -140,6 +140,10 @@ function labb_1_nav_menu_css_class($classes, $item, $args)
   if (is_page() && $item->url === get_permalink()) {
     $classes[] = 'current-menu-item';
   }
+  //lägger till current_menu_item för post-sidan också
+  if (is_home() && $item->url === get_permalink(get_option('page_for_posts'))) {
+    $classes[] = 'current-menu-item';
+  }
   return $classes;
 }
 
@@ -183,24 +187,6 @@ function labb1_wp_enqueue_scripts()
   wp_enqueue_script('ew-js-theme-script', get_template_directory_uri() . '/js/script.js', array('labb1_jquery'), '', true);
 }
 add_action('wp_enqueue_scripts', 'labb1_wp_enqueue_scripts');
-
-
-
-//kolla med ian om den får vara med - översättning av month till månad på arkiv
-function ew_translate_archive_title($title, $original_title, $prefix)
-{
-  if (is_month()) {
-    $title = str_replace('Month:', 'Månad:', $title);
-  }
-  if (is_category()) {
-    $title = str_replace('Category:', 'Kategori:', $title);
-  }
-  if (is_author()) {
-    $title = str_replace('Author:', 'Författare:', $title);
-  }
-  return $title;
-}
-add_filter('get_the_archive_title', 'ew_translate_archive_title', 10, 3);
 
 
 function labb1_navigation_markup_template($template, $class)

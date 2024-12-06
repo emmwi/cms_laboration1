@@ -1,9 +1,7 @@
-bara page? här hamnar kontakt
 <?php
 get_header();
 while (have_posts()) {
-  the_post(); ?>
-
-<?php
+  the_post();
+  the_title();
 }
 get_footer();
